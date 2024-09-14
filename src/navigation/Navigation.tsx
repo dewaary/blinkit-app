@@ -1,14 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { FC } from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import SplashScreen from '@features/SplashScreen';
 
-const Navigation = () => {
+const Stack = createNativeStackNavigator();
+
+const Navigation: FC = () => {
   return (
-    <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-      <Text>Navigation</Text>
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="SplashScreen"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-export default Navigation
-
-const styles = StyleSheet.create({})
+export default Navigation;
