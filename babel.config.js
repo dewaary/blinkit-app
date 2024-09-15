@@ -11,6 +11,7 @@ module.exports = {
           "@features": './src/features',
           "@navigation": './src/navigation',
           "@components": './src/components',
+          "@state": './src/state',
           "@style": './src/style',
           "@service": './src/service',
           "@utils": './src/utils',
